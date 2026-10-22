@@ -6,539 +6,507 @@
 <title>For My Princess ❤️</title>
 
 <style>
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
-
 :root {
-  --pink: #ff6f9f;
-  --light-pink: #ffe1ec;
-  --dark: #54152f;
-  --purple: #7c3b73;
+  --pink: #ff8fbd;
+  --light: #ffe3ef;
+  --gold: #ffd878;
+  --wine: #42001f;
 }
-
-html {
-  scroll-behavior: smooth;
-}
-
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
 body {
-  font-family: Georgia, "Times New Roman", serif;
-  background: linear-gradient(135deg, #ffe0eb, #fff1f6, #f8d9ff);
-  color: var(--dark);
+  margin: 0;
+  color: white;
+  font-family: Georgia, serif;
   text-align: center;
+  background: radial-gradient(ellipse at top, #8c2455 0%, #42001f 55%, #16000e 100%);
   overflow-x: hidden;
 }
-
 button {
-  border: none;
-  border-radius: 30px;
-  padding: 13px 22px;
-  background: linear-gradient(135deg, #ff6797, #e84482);
-  color: white;
-  font-size: 15px;
   cursor: pointer;
-  box-shadow: 0 5px 15px #d64d8040;
-  transition: .25s;
+  border: 1px solid #ffffff55;
+  border-radius: 30px;
+  padding: 13px 21px;
   margin: 7px;
+  font-size: 15px;
+  font-weight: bold;
+  color: #500026;
+  background: linear-gradient(135deg, #fff0f7, #ff9fc8, #ffd878);
+  box-shadow: 0 5px 20px #0004;
+  transition: .25s;
 }
-
-button:hover {
-  transform: translateY(-3px) scale(1.03);
-}
-
-section {
-  width: min(920px, 92%);
-  margin: 25px auto;
-  padding: 32px 20px;
-  border-radius: 25px;
-  background: #ffffffc9;
-  box-shadow: 0 10px 30px #b83b7220;
-  scroll-margin-top: 20px;
-}
-
+button:hover { transform: translateY(-3px) scale(1.03); }
+button:active { transform: scale(.96); }
 h1 {
-  font-size: clamp(35px, 8vw, 60px);
-  color: #d92f75;
-  margin: 15px 0;
+  font-size: clamp(34px, 8vw, 58px);
+  color: #ffe3ef;
+  text-shadow: 0 0 25px #ff75b0;
 }
-
-h2 {
-  font-size: clamp(25px, 5vw, 35px);
-  color: #c62d70;
-  margin-bottom: 18px;
+h2 { color: #ffd4e5; }
+p { line-height: 1.8; }
+section {
+  width: min(92%, 850px);
+  margin: 28px auto;
+  padding: 24px;
+  border: 1px solid #ffffff30;
+  border-radius: 25px;
+  background: #ffffff0d;
+  box-shadow: 0 12px 35px #0003;
+  backdrop-filter: blur(8px);
 }
+.hidden { display: none !important; }
+.small { font-size: 13px; opacity: .8; }
 
-h3 {
-  margin-bottom: 10px;
-  color: #bd326e;
-}
-
-p {
-  line-height: 1.8;
-  margin: 10px 0;
-}
-
-.small {
-  font-size: 13px;
-  opacity: .8;
-}
-
-.hidden {
-  display: none !important;
-}
-
-/* WELCOME */
-
+/* WELCOME SCREEN */
 #welcome {
   position: fixed;
-  z-index: 1000;
   inset: 0;
-  width: 100%;
-  height: 100%;
-  margin: 0;
-  border-radius: 0;
+  z-index: 50;
   display: flex;
-  flex-direction: column;
-  justify-content: center;
   align-items: center;
-  background:
-    radial-gradient(circle at top, #fff4f8, transparent 60%),
-    linear-gradient(135deg, #ffb6d0, #f8d9ff, #ffe7ef);
+  justify-content: center;
+  flex-direction: column;
   padding: 25px;
+  background: radial-gradient(circle, #85234f, #260015 80%);
 }
-
-#welcome p {
-  max-width: 500px;
-}
-
-.heart-big {
-  font-size: 75px;
-  animation: heartbeat 1.3s infinite;
-}
-
-@keyframes heartbeat {
-  50% { transform: scale(1.15); }
-}
+#welcome h1 { font-size: clamp(35px, 8vw, 55px); }
+.crown { font-size: 65px; animation: float 2s infinite ease-in-out; }
+#main { display: none; padding-bottom: 40px; }
+.hero { padding: 45px 15px 20px; }
+.hero-heart { font-size: 55px; animation: heartbeat 1.2s infinite; }
 
 /* NAVIGATION */
-
 nav {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 5px;
   position: sticky;
   top: 0;
-  z-index: 100;
-  padding: 10px 5px;
-  background: #fff0f6ed;
+  z-index: 20;
+  padding: 8px;
+  background: #42001feF;
   backdrop-filter: blur(10px);
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 3px;
 }
-
 nav a {
+  color: #ffe3ef;
   text-decoration: none;
-  color: #9e2458;
   font-size: 12px;
   padding: 7px 9px;
   border-radius: 20px;
+  border: 1px solid #ffffff22;
 }
-
-nav a:hover {
-  background: #ffd3e4;
-}
-
-/* HERO */
-
-.hero {
-  padding-top: 45px;
-}
-
-.hero p {
-  font-size: 18px;
-}
+nav a:hover { background: #8c2455; }
 
 /* CAKE */
-
+.cake-area {
+  height: 330px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  perspective: 900px;
+}
 .cake {
-  font-size: 105px;
-  margin: 15px;
-  animation: cakeGlow 2s infinite alternate;
+  position: relative;
+  width: min(300px, 80vw);
+  height: 230px;
+  animation: cakefloat 3s ease-in-out infinite;
 }
-
-@keyframes cakeGlow {
-  to { filter: drop-shadow(0 0 15px #ff77a8); }
+.plate {
+  position: absolute;
+  bottom: 0;
+  left: -6%;
+  width: 112%;
+  height: 45px;
+  border-radius: 50%;
+  background: linear-gradient(#fff, #eaa2c4, #a43e70);
+  box-shadow: 0 10px 25px #0008;
 }
+.layer {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 100px;
+  bottom: 25px;
+  border-radius: 18px 18px 12px 12px;
+  background: linear-gradient(90deg, #ffb8d4, #f75c9d, #d83a7a);
+  box-shadow: inset 0 -12px 20px #8e194a66;
+}
+.top-layer {
+  left: 12%;
+  bottom: 105px;
+  width: 76%;
+  height: 75px;
+  background: linear-gradient(90deg, #fff0f6, #ffb6d5, #ef78aa);
+}
+.icing {
+  position: absolute;
+  top: -5px;
+  left: -2%;
+  width: 104%;
+  height: 24px;
+  border-radius: 50%;
+  background: linear-gradient(#fff, #ffd6e7);
+}
+.drip {
+  position: absolute;
+  top: 12px;
+  width: 16px;
+  height: 25px;
+  background: #ffeaf4;
+  border-radius: 0 0 12px 12px;
+}
+.drip:nth-child(2) { left: 20%; }
+.drip:nth-child(3) { left: 48%; height: 18px; }
+.drip:nth-child(4) { left: 75%; height: 29px; }
+.berry {
+  position: absolute;
+  top: 12px;
+  width: 17px;
+  height: 17px;
+  border-radius: 50%;
+  background: #d71955;
+  box-shadow: inset -3px -3px 0 #850a36;
+}
+.berry:nth-child(2) { left: 20%; }
+.berry:nth-child(3) { left: 46%; top: 5px; }
+.berry:nth-child(4) { left: 70%; }
+.candle {
+  position: absolute;
+  z-index: 4;
+  bottom: 174px;
+  width: 13px;
+  height: 48px;
+  border-radius: 4px;
+  background: repeating-linear-gradient(135deg, white 0 7px, #ff67a4 7px 13px);
+}
+.cake .candle:nth-of-type(4) { left: 25%; }
+.cake .candle:nth-of-type(5) { left: 46%; height: 57px; bottom: 184px; }
+.cake .candle:nth-of-type(6) { left: 67%; }
+.flame {
+  position: absolute;
+  width: 13px;
+  height: 23px;
+  top: -24px;
+  background: radial-gradient(ellipse at bottom, white, #ffda47 35%, #ff671c 75%, transparent 78%);
+  border-radius: 50% 50% 40% 40%;
+  filter: drop-shadow(0 0 8px #ffbb35);
+  animation: flicker .15s infinite alternate;
+}
+.cake.blown .flame { display: none; }
+.cake.blown { animation: none; }
+#cakeMessage { color: #ffe0ed; font-size: 19px; }
 
-/* LOVE LETTER */
-
-.letter {
-  background: #fff6e9;
-  border: 2px dashed #ed9ebc;
-  border-radius: 15px;
-  padding: 25px;
+/* LETTER */
+#letter {
+  white-space: pre-line;
   text-align: left;
-  max-width: 650px;
-  margin: 20px auto;
   line-height: 2;
-  box-shadow: 0 8px 20px #9f5e6820;
+  color: #fff0f7;
+  background: #ffffff0c;
+  border-radius: 15px;
+  padding: 20px;
 }
 
-.signature {
-  text-align: right;
-  font-style: italic;
-  color: #c62d70;
-  font-weight: bold;
-  margin-top: 20px;
+/* MUSIC */
+.music-box {
+  border: 1px solid #ffd87855;
+  border-radius: 18px;
+  padding: 18px;
+  background: #26001366;
 }
+.music-note { font-size: 35px; animation: music 1s infinite alternate; }
+#youtubePlayer {
+  position: fixed;
+  left: -500px;
+  bottom: 0;
+  width: 200px;
+  height: 120px;
+  opacity: .01;
+  pointer-events: none;
+}
+
+/* GIFTS */
+.gifts {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+.gift {
+  width: 130px;
+  min-height: 125px;
+  padding: 14px 5px;
+  border: 1px solid #ffd87877;
+  border-radius: 15px;
+  background: linear-gradient(145deg, #7c164a, #39001f);
+  color: white;
+  font-size: 39px;
+}
+.gift span { display: block; font-size: 12px; margin-top: 10px; }
+.reveal { min-height: 35px; color: #ffe0ed; line-height: 1.8; }
 
 /* PHOTO GALLERY */
-
 .photo-gallery {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 16px;
-  margin-top: 25px;
+  gap: 15px;
+  margin-top: 22px;
 }
-
 .photo-card {
-  background: white;
-  padding: 9px 9px 14px;
-  border-radius: 7px;
-  box-shadow: 0 7px 20px #71304b25;
+  background: #fff4f8;
+  color: #5b1235;
+  padding: 8px 8px 13px;
+  border-radius: 8px;
+  box-shadow: 0 7px 20px #0005;
   transform: rotate(-1deg);
-  transition: .3s;
+  transition: transform .25s;
   overflow: hidden;
 }
-
-.photo-card:nth-child(even) {
-  transform: rotate(1deg);
-}
-
-.photo-card:hover {
-  transform: rotate(0deg) scale(1.025);
-}
-
+.photo-card:nth-child(even) { transform: rotate(1deg); }
+.photo-card:hover { transform: rotate(0) scale(1.025); }
 .photo-card img {
-  display: block;
   width: 100%;
   height: 220px;
+  display: block;
   object-fit: cover;
   border-radius: 4px;
-  background: #ffe2ed;
+  background: #f5b8d0;
 }
-
 .photo-card p {
+  margin: 10px 2px 0;
   font-size: 13px;
-  margin-top: 10px;
   line-height: 1.5;
 }
-
 .photo-error {
-  color: #b71d57;
-  font-size: 12px;
+  color: #a40040;
   overflow-wrap: anywhere;
+  font-size: 12px;
 }
 
-/* REASONS AND CARDS */
-
+/* EXTRA CARDS */
 .card-grid {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 13px;
-  margin-top: 20px;
 }
-
-.card {
-  background: linear-gradient(145deg, #fff0f6, #ffe1ed);
-  border: 1px solid #ffd1e2;
+.memory-card {
+  background: linear-gradient(145deg, #7c164a, #39001f);
+  border: 1px solid #ffd87855;
+  padding: 18px 12px;
   border-radius: 16px;
-  padding: 20px 12px;
-  box-shadow: 0 5px 14px #a8366410;
 }
+.memory-card .emoji { font-size: 32px; }
 
-.card .emoji {
-  display: block;
-  font-size: 35px;
-  margin-bottom: 10px;
-}
-
-/* PROMISES */
-
-.promise-list {
-  list-style: none;
-  max-width: 600px;
-  margin: 20px auto;
-  text-align: left;
-}
-
-.promise-list li {
-  background: #fff0f6;
-  margin: 10px 0;
-  padding: 13px;
-  border-radius: 12px;
-}
-
-/* LOVE METER */
-
-.meter-track {
-  max-width: 500px;
-  height: 25px;
-  background: #f6c8da;
-  border-radius: 20px;
+/* STARS */
+#stars {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
   overflow: hidden;
-  margin: 20px auto;
+  z-index: -1;
 }
-
-.meter-fill {
-  height: 100%;
-  width: 0;
-  border-radius: 20px;
-  background: linear-gradient(90deg, #ff77a8, #d92570);
-  transition: width 1.5s ease;
+.star {
+  position: absolute;
+  color: #fff3c4;
+  animation: twinkle 2s infinite alternate;
 }
 
 /* HEART GAME */
-
-#gameArea {
-  height: 250px;
-  max-width: 550px;
-  margin: 20px auto;
+#game {
   position: relative;
-  background: linear-gradient(135deg, #ffe0ed, #fff5fa);
-  border: 2px dashed #f2a2c1;
+  height: 230px;
+  border: 1px solid #ffffff44;
   border-radius: 18px;
   overflow: hidden;
+  background: #28001988;
 }
-
 .game-heart {
   position: absolute;
-  font-size: 35px;
-  cursor: pointer;
-  user-select: none;
-  animation: heartbeat 1s infinite;
+  border: none;
+  background: transparent;
+  padding: 0;
+  margin: 0;
+  box-shadow: none;
+  font-size: 32px;
+  line-height: 1;
 }
 
 /* FINAL */
-
-#finalBox {
-  background: linear-gradient(135deg, #ffdeeb, #f5d9ff);
-  padding: 25px 15px;
-  border-radius: 20px;
-  margin-top: 20px;
+#finalMessage {
+  font-size: 21px;
+  line-height: 2;
+  color: #ffe0ed;
 }
+.big-heart { font-size: 75px; animation: heartbeat 1s infinite; }
 
-#finalBox h2 {
-  font-size: clamp(28px, 6vw, 42px);
+@keyframes heartbeat {
+  0%,100% { transform: scale(1); }
+  50% { transform: scale(1.15); }
 }
-
-footer {
-  padding: 30px 15px;
-  color: #a02c61;
+@keyframes float {
+  0%,100% { transform: translateY(0); }
+  50% { transform: translateY(-12px); }
 }
-
-/* FLOATING HEARTS */
-
-.floating-heart {
-  position: fixed;
-  bottom: -35px;
-  pointer-events: none;
-  z-index: 2000;
-  animation: floatUp 4s linear forwards;
+@keyframes cakefloat {
+  0%,100% { transform: rotateY(-4deg) translateY(0); }
+  50% { transform: rotateY(4deg) translateY(-7px); }
 }
-
-@keyframes floatUp {
-  0% {
-    transform: translateY(0) rotate(0deg);
-    opacity: 1;
-  }
-  100% {
-    transform: translateY(-110vh) rotate(360deg);
-    opacity: 0;
-  }
+@keyframes flicker {
+  from { transform: rotate(-5deg) scale(.94); }
+  to { transform: rotate(5deg) scale(1.08); }
 }
-
-@media (max-width: 480px) {
-  section {
-    padding: 25px 14px;
-  }
-
-  .photo-card img {
-    height: 155px;
-  }
-
-  .card-grid {
-    gap: 9px;
-  }
-
-  .card {
-    padding: 16px 9px;
-  }
-
-  nav a {
-    font-size: 11px;
-    padding: 6px;
-  }
+@keyframes twinkle {
+  from { opacity: .2; transform: scale(.7); }
+  to { opacity: 1; transform: scale(1.2); }
+}
+@keyframes music {
+  from { transform: scale(.9); }
+  to { transform: scale(1.15); }
+}
+@keyframes rise {
+  to { transform: translateY(-110vh) rotate(360deg); opacity: 0; }
+}
+@keyframes fall {
+  to { transform: translateY(110vh) rotate(720deg); opacity: 0; }
+}
+@media(max-width:480px) {
+  section { padding: 18px; }
+  .gift { width: 105px; }
+  .photo-card img { height: 145px; }
+  nav a { font-size: 11px; padding: 6px; }
 }
 </style>
 </head>
 
 <body>
+<div id="stars"></div>
 
-<!-- WELCOME SCREEN -->
-
+<!-- WELCOME -->
 <div id="welcome">
-  <div class="heart-big">💗</div>
+  <div class="crown">👑</div>
   <h1>For My Princess</h1>
-  <p>
-    Someone very special deserves something made with love.
-    This little world is only for you. 👑
-  </p>
-  <button onclick="openWebsite()">Open Your Surprise 💌</button>
-  <p class="small">Made with all my heart ❤️</p>
+  <p>A little world made with love, just for you. ❤️</p>
+  <button onclick="enterWorld()">✨ Enter My World ✨</button>
 </div>
 
-<!-- NAVIGATION -->
+<div id="main">
+
+<header class="hero">
+  <div class="hero-heart">❤️</div>
+  <h1>Happy Birthday, Princess!</h1>
+  <p>Today, this little world belongs to you. 🌹</p>
+  <p>Every little surprise here was made to make you smile. 💗</p>
+</header>
 
 <nav>
-  <a href="#home">Home</a>
-  <a href="#cake">Cake 🎂</a>
-  <a href="#letter">Letter 💌</a>
-  <a href="#memories">Memories 📸</a>
+  <a href="#birthdayCake">Cake 🎂</a>
+  <a href="#letterSection">Letter 💌</a>
+  <a href="#memories">Photos 📸</a>
   <a href="#reasons">Reasons 💗</a>
   <a href="#gifts">Gifts 🎁</a>
   <a href="#promises">Promises 🤞</a>
-  <a href="#game">Game 🎮</a>
-  <a href="#final">Surprise ✨</a>
+  <a href="#loveMeter">Love Meter ♾️</a>
+  <a href="#heartGame">Game 🎮</a>
+  <a href="#finalSection">Final Surprise ✨</a>
 </nav>
 
-<!-- HOME -->
+<!-- ORIGINAL CAKE AND CANDLES -->
+<section id="birthdayCake">
+  <h2>🎂 Your Birthday Cake</h2>
+  <p>Make a wish, princess. The stars are listening. ✨</p>
 
-<section id="home" class="hero">
-  <p>🌷 A little website for my favourite person 🌷</p>
-  <h1>Happy Birthday, Princess! ❤️</h1>
-  <p>
-    If I could give you one thing in this world,
-    I would give you the ability to see yourself through my eyes.
-    Only then would you understand how special you are to me.
-  </p>
-  <div class="heart-big">👑</div>
-  <p>Today is all about you. You deserve all the happiness in the world. 💕</p>
-  <button onclick="floatHearts(20)">Send You Some Love 💖</button>
-</section>
-
-<!-- CAKE -->
-
-<section id="cake">
-  <h2>A Birthday Cake Just for You 🎂</h2>
-  <div class="cake">🎂</div>
-  <p>Make a wish, close your eyes, and blow out your candles! ✨</p>
-  <button onclick="celebrate(50); this.textContent='Your wish is on its way! 💖'">
-    Blow the Candles 🕯️
-  </button>
-</section>
-
-<!-- LOVE LETTER -->
-
-<section id="letter">
-  <h2>A Little Letter From My Heart 💌</h2>
-
-  <div class="letter">
-    <p>My Dearest Princess, ❤️</p>
-
-    <p>
-      Happy Birthday to the person who makes ordinary moments feel
-      extraordinary. Today, I just want you to know how much you mean
-      to me.
-    </p>
-
-    <p>
-      Your smile can make a difficult day feel easier, and even the
-      smallest moments with you can become beautiful memories.
-      You have a special place in my heart that nobody else can take.
-    </p>
-
-    <p>
-      I hope this new year of your life brings you endless happiness,
-      beautiful surprises, success in everything you do, and countless
-      reasons to smile.
-    </p>
-
-    <p>
-      No website or letter could ever explain every feeling in my heart,
-      but I hope this little surprise makes you feel loved and appreciated.
-    </p>
-
-    <p>
-      Always remember that you are precious, you are special,
-      and you deserve the very best. Keep smiling, my princess. 🌷
-    </p>
-
-    <p class="signature">
-      With lots of love,<br>
-      Your Shourya ❤️
-    </p>
+  <div class="cake-area">
+    <div class="cake" id="cake">
+      <div class="plate"></div>
+      <div class="layer">
+        <div class="icing"></div>
+        <i class="drip"></i><i class="drip"></i><i class="drip"></i>
+      </div>
+      <div class="layer top-layer">
+        <div class="icing"></div>
+        <i class="berry"></i><i class="berry"></i><i class="berry"></i>
+      </div>
+      <div class="candle"><i class="flame"></i></div>
+      <div class="candle"><i class="flame"></i></div>
+      <div class="candle"><i class="flame"></i></div>
+    </div>
   </div>
 
-  <button onclick="showSongMessage()">A Little More Love 🎶</button>
-  <p id="songMessage" class="hidden">
-    Every love song reminds me that some feelings are too beautiful
-    to explain in words. ❤️🎵
-  </p>
+  <p id="cakeMessage">Your candles are glowing, just like you. 🕯️</p>
+  <button onclick="blowCandles()">💨 Blow the Candles</button>
+  <button onclick="makeWish()">✨ Make a Wish</button>
+  <button onclick="relight()">🕯️ Light Them Again</button>
+  <p class="small">Microphone-free button is always available.</p>
 </section>
 
-<!-- PHOTO MEMORIES -->
+<!-- ORIGINAL LOVE LETTER AND SONG -->
+<section id="letterSection">
+  <h2>💌 A Surprise For You</h2>
+  <p>There's something special waiting inside this little envelope.</p>
+  <div style="font-size:60px">💌</div>
+  <button onclick="openSurprise()">Open Your Surprise 💌</button>
+  <p class="small">Your letter and our song are waiting. ❤️</p>
 
+  <div id="letter" class="hidden">
+    <h2>To My Princess ❤️</h2>
+    Happy Birthday, my princess! 🌹 You make ordinary moments feel special, and your smile can make even a difficult day brighter.
+
+    I hope this new year of your life brings you endless happiness, beautiful memories, and countless reasons to smile.
+
+    You deserve kindness, peace, love, and all the wonderful things life can offer.
+
+    No matter how simple this little surprise may be, I made it with the hope that it brings a smile to your face.
+
+    Keep shining, keep smiling, and always remember how special you are.
+
+    <strong>Happy Birthday, My Princess! ❤️🎂</strong>
+  </div>
+
+  <div class="music-box">
+    <div class="music-note">🎵</div>
+    <h3>Apna Bana Le ❤️</h3>
+    <p id="musicStatus">Tap Open Your Surprise to try playing our song.</p>
+    <button onclick="playSong()">▶️ Play Song</button>
+    <button onclick="pauseSong()">⏸️ Pause Song</button>
+    <p class="small">The song uses YouTube playback. Browser or video restrictions may affect it.</p>
+    <div id="youtubePlayer"></div>
+  </div>
+</section>
+
+<!-- PHOTO GALLERY -->
 <section id="memories">
   <h2>📸 Our Little World of Memories 💗</h2>
-  <p>
-    Every picture holds a little piece of a beautiful memory. ❤️
-  </p>
-
+  <p>Every picture holds a little piece of a beautiful memory. ❤️</p>
   <div id="photoGallery" class="photo-gallery"></div>
   <p id="photoCount" class="small"></p>
 </section>
 
-<!-- REASONS -->
-
+<!-- ORIGINAL REASONS -->
 <section id="reasons">
-  <h2>Reasons Why You're Special 💕</h2>
-  <p>There are a million reasons, but here are a few of them.</p>
+  <h2>💗 Reasons You Are Special</h2>
+  <p>Tap to discover a little reason at a time.</p>
+  <button onclick="nextReason()">Reveal a Reason 💖</button>
+  <p class="reveal" id="reason">Your first surprise is waiting…</p>
 
   <div class="card-grid">
-    <div class="card">
-      <span class="emoji">😊</span>
+    <div class="memory-card">
+      <div class="emoji">😊</div>
       <h3>Your Smile</h3>
-      <p>It makes even an ordinary day feel beautiful.</p>
+      <p>It can make an ordinary day feel beautiful.</p>
     </div>
-
-    <div class="card">
-      <span class="emoji">💗</span>
+    <div class="memory-card">
+      <div class="emoji">💗</div>
       <h3>Your Heart</h3>
-      <p>The kindness and warmth you bring into the world.</p>
+      <p>Your kindness makes you special.</p>
     </div>
-
-    <div class="card">
-      <span class="emoji">✨</span>
+    <div class="memory-card">
+      <div class="emoji">✨</div>
       <h3>Your Magic</h3>
-      <p>You have your own special way of making moments memorable.</p>
+      <p>You make little moments memorable.</p>
     </div>
-
-    <div class="card">
-      <span class="emoji">🌷</span>
-      <h3>Your Personality</h3>
-      <p>There is something beautiful about the person you are.</p>
-    </div>
-
-    <div class="card">
-      <span class="emoji">🥹</span>
-      <h3>Our Memories</h3>
-      <p>Even little moments can become my favourite memories.</p>
-    </div>
-
-    <div class="card">
-      <span class="emoji">👑</span>
+    <div class="memory-card">
+      <div class="emoji">👑</div>
       <h3>Simply You</h3>
       <p>You don't need to be anyone else to be amazing.</p>
     </div>
@@ -546,375 +514,229 @@ footer {
 </section>
 
 <!-- GIFTS -->
-
 <section id="gifts">
-  <h2>Little Gifts for My Princess 🎁</h2>
-  <p>Tap each gift to reveal a little surprise.</p>
-
-  <div class="card-grid">
-    <div class="card">
-      <span class="emoji">🎁</span>
-      <button onclick="openGift(1)">Gift Number 1</button>
-      <p id="gift1" class="hidden">
-        A million hugs, just for you! 🤗❤️
-      </p>
-    </div>
-
-    <div class="card">
-      <span class="emoji">🌹</span>
-      <button onclick="openGift(2)">Gift Number 2</button>
-      <p id="gift2" class="hidden">
-        An endless bouquet of roses for my favourite person. 🌹
-      </p>
-    </div>
-
-    <div class="card">
-      <span class="emoji">💎</span>
-      <button onclick="openGift(3)">Gift Number 3</button>
-      <p id="gift3" class="hidden">
-        A reminder that you are priceless. 💖
-      </p>
-    </div>
-
-    <div class="card">
-      <span class="emoji">💌</span>
-      <button onclick="openGift(4)">Gift Number 4</button>
-      <p id="gift4" class="hidden">
-        One big promise to always treasure our beautiful memories. 💗
-      </p>
-    </div>
+  <h2>🎁 Choose Your Mystery Gift</h2>
+  <p>Three little gifts, each with a special message.</p>
+  <div class="gifts">
+    <button class="gift" onclick="openGift(0)">🎁<span>Gift One</span></button>
+    <button class="gift" onclick="openGift(1)">🎀<span>Gift Two</span></button>
+    <button class="gift" onclick="openGift(2)">💝<span>Gift Three</span></button>
+    <button class="gift" onclick="openGift(3)">🌹<span>Gift Four</span></button>
   </div>
+  <p class="reveal" id="giftMessage">Choose any gift to open it. ✨</p>
 </section>
 
 <!-- PROMISES -->
-
 <section id="promises">
-  <h2>My Little Promises to You 🤞</h2>
-
-  <ul class="promise-list">
-    <li>💗 I promise to appreciate the little things about you.</li>
-    <li>🌷 I promise to celebrate your happiness and achievements.</li>
-    <li>🤗 I promise to listen when you need someone to talk to.</li>
-    <li>✨ I promise to treasure the beautiful memories we make.</li>
-    <li>😊 I promise to keep finding reasons to make you smile.</li>
-    <li>❤️ I promise to treat your feelings with kindness and respect.</li>
-  </ul>
+  <h2>🫶 Little Promises</h2>
+  <p>Because the smallest promises can mean the most.</p>
+  <button onclick="nextPromise()">Discover a Promise 💗</button>
+  <p class="reveal" id="promise">A promise is waiting for you…</p>
 </section>
 
 <!-- LOVE METER -->
-
 <section id="loveMeter">
-  <h2>Princess Love Meter 💘</h2>
-  <p>How much love can fit inside one little heart?</p>
-
-  <div class="meter-track">
-    <div id="meterFill" class="meter-fill"></div>
+  <h2>♾️ Our Love Meter</h2>
+  <p>Ready to measure something that has no limit?</p>
+  <button onclick="runLoveMeter()">Measure Our Love ❤️</button>
+  <h2 id="meter">∞</h2>
+  <p class="reveal" id="meterText">Some feelings cannot fit into numbers.</p>
+  <div style="max-width:500px;margin:20px auto;height:18px;border-radius:20px;background:#ffffff22;overflow:hidden">
+    <div id="meterBar" style="width:0;height:100%;background:linear-gradient(90deg,#ff8fbd,#ffd878);transition:width 1.5s"></div>
   </div>
-
-  <h3 id="meterText">Love loading... 💗</h3>
-
-  <button onclick="startLoveMeter()">Measure My Love ❤️</button>
 </section>
 
 <!-- HEART GAME -->
-
-<section id="game">
-  <h2>Catch the Hearts! 💖</h2>
-  <p>Tap the hearts before they disappear. How many can you catch?</p>
-
-  <h3>Score: <span id="score">0</span></h3>
-
-  <div id="gameArea">
-    <p style="padding-top:100px" id="gameHint">Press Start to play! 💗</p>
-  </div>
-
-  <button onclick="startGame()">Start the Game 🎮</button>
-  <button onclick="stopGame()">Stop Game</button>
+<section id="heartGame">
+  <h2>🎮 Catch the Hearts!</h2>
+  <p>Catch as many hearts as you can in 15 seconds.</p>
+  <p>Score: <strong id="score">0</strong> | Time: <strong id="time">15</strong>s</p>
+  <button onclick="startGame()">Start Game 💗</button>
+  <div id="game"></div>
+  <p id="gameMessage" class="reveal"></p>
 </section>
 
 <!-- FINAL SURPRISE -->
-
-<section id="final">
-  <h2>One Last Surprise... 💌</h2>
-  <p>
-    You've reached the end of this little website,
-    but there is always more love to give. ❤️
-  </p>
-
-  <button onclick="finalSurprise()">Open Your Final Surprise ✨</button>
+<section id="finalSection">
+  <h2>🌌 One Last Surprise</h2>
+  <p>Before you leave this little world…</p>
+  <button onclick="finalSurprise()">One Last Thing… ❤️</button>
 
   <div id="finalBox" class="hidden">
-    <div class="heart-big">💖</div>
-
-    <h2>You're My Princess! 👑</h2>
-
-    <p>
-      Out of all the little moments life gives us,
-      I'm grateful for the ones that make me smile
-      whenever I think of you.
+    <div class="big-heart">❤️</div>
+    <p id="finalMessage">
+      Out of all the people in this world, I'm glad our paths crossed.
+      Keep smiling, keep shining, and have the most beautiful birthday.
+      Happy Birthday, Princess! 🌹✨
     </p>
-
-    <p>
-      I hope your birthday is filled with laughter,
-      beautiful memories, sweet surprises, and happiness
-      that lasts long after today.
-    </p>
-
-    <p>
-      Never forget how special you are. Keep shining,
-      keep smiling, and keep being your wonderful self. 🌷
-    </p>
-
-    <h1>Happy Birthday! 🎂❤️</h1>
-
-    <p>Sending you the biggest virtual hug! 🤗💗</p>
+    <button onclick="celebrate(120);floatHearts(30)">Celebrate Again 🎆</button>
   </div>
 </section>
 
-<footer>
-  <p>Made with ❤️ especially for my Princess.</p>
-  <p>Forever a beautiful memory. 🌷</p>
+<footer class="small" style="padding:20px">
+  Made with love, just for you. ❤️✨
 </footer>
+</div>
 
 <script>
-/* PHOTO FILENAMES: KEEP THESE NAMES THE SAME AS YOUR UPLOADED FILES */
-
-const princessPhotos = [
-  "IMG_20261022_223400_628_1.jpg",
-  "IMG_20261022_223400_628_2.jpg",
-  "IMG_20261022_223401_600_5.jpg",
-  "IMG_20261022_223401_662_6.jpg",
-  "IMG_20261022_223401_671_7.jpg",
-  "IMG_20261022_223401_699_8.jpg",
-  "IMG_20261022_223401_708_9.jpg",
-  "IMG_20261022_223401_746_1.jpg",
-  "IMG_20261022_223401_748_2.jpg",
-  "IMG_20261022_223401_820_5.jpg",
-  "IMG_20261022_223401_885_6.jpg",
-  "IMG_20261022_223401_938_7.jpg",
-  "IMG_20261022_223401_989_8.jpg",
-  "IMG_20261022_223402_043_9.jpg",
-  "IMG_20261022_223409_571.jpg",
-  "IMG_20261022_223412_117.jpg",
-  "IMG_20261022_223416_247.jpg",
-  "IMG_20261022_223418_849.jpg"
-];
-
 /* WELCOME */
-
-function openWebsite() {
-  document.getElementById("welcome").classList.add("hidden");
+function enterWorld() {
+  document.getElementById('welcome').style.display = 'none';
+  document.getElementById('main').style.display = 'block';
+  celebrate(20);
   floatHearts(15);
 }
 
-/* FLOATING HEARTS */
+/* STAR BACKGROUND */
+const stars = document.getElementById('stars');
+for (let i = 0; i < 65; i++) {
+  const s = document.createElement('span');
+  s.className = 'star';
+  s.textContent = '✦';
+  s.style.left = Math.random() * 100 + '%';
+  s.style.top = Math.random() * 100 + '%';
+  s.style.fontSize = (5 + Math.random() * 13) + 'px';
+  s.style.animationDelay = Math.random() * 3 + 's';
+  stars.appendChild(s);
+}
 
-function floatHearts(amount = 20) {
-  const symbols = ["❤️", "💗", "💖", "💕", "💘", "🌸"];
-
-  for (let i = 0; i < amount; i++) {
-    const heart = document.createElement("span");
-
-    heart.className = "floating-heart";
-    heart.textContent = symbols[Math.floor(Math.random() * symbols.length)];
-
-    heart.style.left = Math.random() * 100 + "vw";
-    heart.style.fontSize = (15 + Math.random() * 25) + "px";
-    heart.style.animationDuration = (3 + Math.random() * 3) + "s";
-
-    document.body.appendChild(heart);
-
-    setTimeout(() => heart.remove(), 6500);
+/* HEARTS AND CONFETTI */
+function floatHearts(count = 25) {
+  const icons = ['💗','💕','💖','❤️','✨','💘'];
+  for (let i = 0; i < count; i++) {
+    const e = document.createElement('span');
+    e.textContent = icons[Math.floor(Math.random() * icons.length)];
+    e.style.position = 'fixed';
+    e.style.zIndex = '99';
+    e.style.left = Math.random() * 100 + 'vw';
+    e.style.bottom = '-35px';
+    e.style.fontSize = (18 + Math.random() * 22) + 'px';
+    e.style.pointerEvents = 'none';
+    e.style.animation = `rise ${3 + Math.random() * 3}s linear forwards`;
+    document.body.appendChild(e);
+    setTimeout(() => e.remove(), 6500);
   }
 }
 
-/* CELEBRATION */
-
-function celebrate(amount = 50) {
-  floatHearts(amount);
-}
-
-/* LOVE LETTER / SONG MESSAGE */
-
-function showSongMessage() {
-  document.getElementById("songMessage").classList.toggle("hidden");
-  floatHearts(8);
-}
-
-/* PHOTO GALLERY */
-
-const photoGallery = document.getElementById("photoGallery");
-const photoCount = document.getElementById("photoCount");
-
-const captions = [
-  "💗 A little piece of happiness",
-  "🌷 My favourite memory",
-  "✨ A moment to remember",
-  "❤️ A memory to keep forever",
-  "👑 My favourite person"
-];
-
-princessPhotos.forEach((filename, index) => {
-  const card = document.createElement("div");
-  card.className = "photo-card";
-
-  const img = document.createElement("img");
-  img.src = filename;
-  img.alt = "Special memory " + (index + 1);
-  img.loading = "lazy";
-
-  const caption = document.createElement("p");
-  caption.textContent = captions[index % captions.length];
-
-  const error = document.createElement("p");
-  error.className = "photo-error hidden";
-  error.textContent = "Image not found: " + filename;
-
-  img.onerror = function() {
-    img.classList.add("hidden");
-    error.classList.remove("hidden");
-  };
-
-  card.appendChild(img);
-  card.appendChild(caption);
-  card.appendChild(error);
-
-  photoGallery.appendChild(card);
-});
-
-photoCount.textContent =
-  princessPhotos.length + " special memories ❤️";
-
-/* GIFTS */
-
-function openGift(number) {
-  const gift = document.getElementById("gift" + number);
-  gift.classList.toggle("hidden");
-
-  if (!gift.classList.contains("hidden")) {
-    floatHearts(8);
+function celebrate(count = 100) {
+  const colors = ['#ff79ad','#ffd878','#fff0f7','#d7c2ff','#ffffff'];
+  for (let i = 0; i < count; i++) {
+    const e = document.createElement('i');
+    e.style.position = 'fixed';
+    e.style.top = '-20px';
+    e.style.left = Math.random() * 100 + 'vw';
+    e.style.width = '8px';
+    e.style.height = '13px';
+    e.style.background = colors[Math.floor(Math.random() * colors.length)];
+    e.style.zIndex = '100';
+    e.style.pointerEvents = 'none';
+    e.style.animation = `fall ${2 + Math.random() * 3}s linear forwards`;
+    e.style.animationDelay = Math.random() * .5 + 's';
+    document.body.appendChild(e);
+    setTimeout(() => e.remove(), 6000);
   }
 }
 
-/* LOVE METER */
+/* CAKE AND CANDLES */
+let blown = false;
 
-function startLoveMeter() {
-  const fill = document.getElementById("meterFill");
-  const text = document.getElementById("meterText");
-
-  fill.style.width = "0%";
-  text.textContent = "Calculating love... 💗";
-
-  setTimeout(() => {
-    fill.style.width = "100%";
-    text.textContent = "INFINITE LOVE! ∞ ❤️";
-
-    floatHearts(30);
-  }, 300);
+function blowCandles() {
+  document.getElementById('cake').classList.add('blown');
+  document.getElementById('cakeMessage').textContent =
+    'Wish granted! May your dreams come true. ❤️✨';
+  blown = true;
+  celebrate(80);
+  floatHearts(25);
 }
 
-/* HEART CATCHING GAME */
-
-let score = 0;
-let gameInterval = null;
-let gameRunning = false;
-
-function spawnHeart() {
-  if (!gameRunning) return;
-
-  const area = document.getElementById("gameArea");
-
-  const oldHint = document.getElementById("gameHint");
-  if (oldHint) oldHint.remove();
-
-  const heart = document.createElement("span");
-  heart.className = "game-heart";
-  heart.textContent = ["💗", "💖", "💘", "❤️"][
-    Math.floor(Math.random() * 4)
-  ];
-
-  const maxX = Math.max(0, area.clientWidth - 45);
-  const maxY = Math.max(0, area.clientHeight - 45);
-
-  heart.style.left = Math.random() * maxX + "px";
-  heart.style.top = Math.random() * maxY + "px";
-
-  heart.onclick = function() {
-    score++;
-    document.getElementById("score").textContent = score;
-    heart.remove();
-  };
-
-  area.appendChild(heart);
-
-  setTimeout(() => heart.remove(), 1500);
-}
-
-function startGame() {
-  stopGame();
-
-  score = 0;
-  gameRunning = true;
-
-  document.getElementById("score").textContent = score;
-  document.getElementById("gameArea").innerHTML = "";
-
-  spawnHeart();
-  gameInterval = setInterval(spawnHeart, 650);
-}
-
-function stopGame() {
-  gameRunning = false;
-
-  if (gameInterval !== null) {
-    clearInterval(gameInterval);
-    gameInterval = null;
-  }
-
-  const area = document.getElementById("gameArea");
-  area.querySelectorAll(".game-heart").forEach(heart => heart.remove());
-
-  if (score > 0) {
-    document.getElementById("gameHint").textContent =
-      "Your final score: " + score + " 💖";
+function makeWish() {
+  document.getElementById('cakeMessage').textContent =
+    'Close your eyes and make a beautiful wish. 💖';
+  if (!blown) {
+    blowCandles();
   } else {
-    document.getElementById("gameHint").textContent =
-      "Press Start to play! 💗";
-  }
-
-  if (!document.getElementById("gameHint")) {
-    const hint = document.createElement("p");
-    hint.id = "gameHint";
-    hint.style.paddingTop = "100px";
-    hint.textContent = score > 0
-      ? "Your final score: " + score + " 💖"
-      : "Press Start to play! 💗";
-
-    area.appendChild(hint);
+    celebrate(60);
+    floatHearts(20);
   }
 }
 
-/* FINAL SURPRISE */
+function relight() {
+  document.getElementById('cake').classList.remove('blown');
+  document.getElementById('cakeMessage').textContent =
+    'The candles are glowing again, princess! 🕯️';
+  blown = false;
+}
 
-function finalSurprise() {
-  document.getElementById("finalBox").classList.remove("hidden");
-
-  document.getElementById("finalBox").scrollIntoView({
-    behavior: "smooth",
-    block: "center"
+/* SURPRISE LETTER + MUSIC */
+function openSurprise() {
+  document.getElementById('letter').classList.remove('hidden');
+  document.getElementById('letter').scrollIntoView({
+    behavior: 'smooth',
+    block: 'center'
   });
-
-  celebrate(60);
+  floatHearts(25);
+  playSong();
 }
 
-/* GENTLE HEART EFFECT */
+/* ORIGINAL SONG PLAYER */
+let player = null;
+let playerReady = false;
+let playRequested = false;
 
-setInterval(() => {
-  if (Math.random() < 0.35) {
-    floatHearts(1);
+function playSong() {
+  playRequested = true;
+  document.getElementById('musicStatus').textContent =
+    'Trying to play Apna Bana Le… 🎵';
+
+  if (playerReady && player) {
+    try {
+      player.unMute();
+      player.setVolume(75);
+      player.playVideo();
+    } catch (e) {
+      document.getElementById('musicStatus').textContent =
+        'Playback may be blocked. Try the Play Song button again.';
+    }
+  } else {
+    document.getElementById('musicStatus').textContent =
+      'Loading the music player… tap Play Song again in a moment if needed.';
   }
-}, 3500);
-</script>
+}
 
-</body>
-</html>
+function pauseSong() {
+  if (playerReady && player) player.pauseVideo();
+  document.getElementById('musicStatus').textContent = 'Song paused.';
+}
+
+window.onYouTubeIframeAPIReady = function() {
+  player = new YT.Player('youtubePlayer', {
+    width: '200',
+    height: '120',
+    videoId: 'UEvOsQBu1jY',
+    playerVars: {
+      autoplay: 0,
+      controls: 1,
+      playsinline: 1,
+      rel: 0
+    },
+    events: {
+      onReady: function(event) {
+        playerReady = true;
+        event.target.setVolume(75);
+        if (playRequested) {
+          event.target.unMute();
+          event.target.playVideo();
+        }
+      },
+      onStateChange: function(event) {
+        if (event.data === YT.PlayerState.PLAYING) {
+          document.getElementById('musicStatus').textContent =
+            'Apna Bana Le is playing. ❤️🎵';
+        }
+        if (event.data === YT.PlayerState.PAUSED) {
+          document.getElementById('musicStatus').textContent = 'Song paused.';
+        }
+      },
+      onError: function() {
+        document.getElementById('musicStatus').textContent =
+          'YouTube could no
