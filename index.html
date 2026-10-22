@@ -1,238 +1,262 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>For My Princess ❤️</title>
-
-  <style>
-    * {
-      box-sizing: border-box;
-    }
-
-    body {
-      margin: 0;
-      font-family: 'Georgia', serif;
-      background: linear-gradient(135deg, #2b001e, #800040, #ff4d88);
-      color: white;
-      text-align: center;
-      min-height: 100vh;
-    }
-
-    .container {
-      width: 90%;
-      max-width: 700px;
-      margin: auto;
-      padding: 35px 0;
-    }
-
-    .heart {
-      font-size: 55px;
-      animation: heartbeat 1.2s infinite;
-    }
-
-    h1 {
-      font-size: 36px;
-      color: #ffd6e7;
-      text-shadow: 0 0 15px #ff80ab;
-    }
-
-    h2 {
-      color: #ffc2dc;
-      margin-top: 35px;
-    }
-
-    .card {
-      background: rgba(255, 255, 255, 0.12);
-      border: 1px solid rgba(255, 255, 255, 0.25);
-      border-radius: 20px;
-      padding: 25px;
-      margin: 25px 0;
-      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
-      line-height: 1.8;
-    }
-
-    button {
-      background: #ffb3d1;
-      color: #65002f;
-      border: none;
-      border-radius: 30px;
-      padding: 13px 25px;
-      font-size: 16px;
-      font-weight: bold;
-      cursor: pointer;
-      margin: 10px;
-      transition: 0.3s;
-    }
-
-    button:hover {
-      background: white;
-      transform: scale(1.05);
-    }
-
-    #letter {
-      display: none;
-      white-space: pre-line;
-    }
-
-    .song-box {
-      background: rgba(255, 255, 255, 0.12);
-      border-radius: 20px;
-      padding: 20px;
-      margin-top: 30px;
-    }
-
-    iframe {
-      width: 100%;
-      max-width: 420px;
-      height: 236px;
-      border: none;
-      border-radius: 14px;
-      margin-top: 10px;
-    }
-
-    .footer {
-      margin-top: 40px;
-      padding-bottom: 20px;
-      color: #ffd6e7;
-    }
-
-    @keyframes heartbeat {
-      0%, 100% { transform: scale(1); }
-      50% { transform: scale(1.15); }
-    }
-
-    @media (max-width: 480px) {
-      h1 {
-        font-size: 29px;
-      }
-
-      .card {
-        padding: 18px;
-      }
-
-      iframe {
-        height: 210px;
-      }
-    }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>For My Princess ❤️</title>
+<style>
+:root{--pink:#ff9fc8;--deep:#4b002c;--cream:#fff0f5;--gold:#ffd166}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;min-height:100vh;overflow-x:hidden;color:#fff;font-family:Georgia,serif;text-align:center;background:radial-gradient(circle at top,#a52b68 0%,#59002f 48%,#240018 100%)}
+.container{width:min(92%,760px);margin:auto;padding:32px 0 48px;position:relative;z-index:1}
+h1{font-size:clamp(2rem,7vw,3.4rem);color:#ffe0ed;text-shadow:0 0 18px #ff8ab9;margin:10px 0}
+h2{color:#ffd0e3}
+p{line-height:1.75}
+.heart-logo{font-size:55px;animation:beat 1.15s infinite}
+.card{background:#ffffff14;border:1px solid #ffffff30;border-radius:24px;padding:22px;margin:24px 0;box-shadow:0 12px 30px #0003;backdrop-filter:blur(5px)}
+button{border:0;border-radius:999px;padding:13px 22px;margin:7px;font-size:1rem;font-weight:bold;cursor:pointer;color:#650032;background:linear-gradient(135deg,#ffe0ec,#ff9fc8);box-shadow:0 5px 16px #0003;transition:transform .2s}
+button:hover{transform:translateY(-2px) scale(1.03)}
+.small-note{font-size:.9rem;opacity:.85}
+#letter{display:none;white-space:pre-line}
+.cake-stage{perspective:900px;padding:12px 0 28px;min-height:340px;display:flex;flex-direction:column;align-items:center;justify-content:center}
+.cake{position:relative;width:min(330px,82vw);height:230px;transform-style:preserve-3d;animation:cakeFloat 3s ease-in-out infinite}
+.plate{position:absolute;bottom:0;left:50%;transform:translateX(-50%) rotateX(65deg);width:110%;height:55px;border-radius:50%;background:linear-gradient(#fff7fc,#e9a6c8 60%,#a74477);box-shadow:0 16px 25px #12000d88}
+.tier{position:absolute;left:50%;transform:translateX(-50%);border-radius:18px 18px 12px 12px;box-shadow:inset -15px 0 20px #8b1b52aa,inset 12px 0 16px #fff5,0 12px 18px #17000d55}
+.tier-bottom{bottom:28px;width:100%;height:105px;background:linear-gradient(90deg,#ffb6d4,#ff6fa8 48%,#e74888)}
+.tier-top{bottom:112px;width:76%;height:78px;background:linear-gradient(90deg,#fff0f6,#ffb3d1 55%,#ee76aa);border-radius:15px 15px 10px 10px}
+.icing{position:absolute;top:-5px;left:-2%;width:104%;height:25px;border-radius:50%;background:linear-gradient(#fffaff,#ffd9e8);box-shadow:0 4px 0 #f18ab7}
+.drip{position:absolute;top:12px;width:18px;height:27px;background:#ffeaf3;border-radius:0 0 12px 12px}
+.d1{left:15%}.d2{left:38%;height:19px}.d3{left:65%;height:31px}.d4{left:82%;height:21px}
+.berry{position:absolute;top:15px;width:17px;height:17px;background:#d91d58;border-radius:50% 50% 45% 45%;box-shadow:inset -3px -3px 0 #8f0c38}
+.b1{left:23%}.b2{left:46%;top:8px}.b3{left:68%}
+.candle{position:absolute;bottom:185px;width:13px;height:48px;border-radius:4px;background:repeating-linear-gradient(135deg,#fff 0 7px,#ff70a7 7px 13px);box-shadow:inset -3px 0 3px #b52e68;z-index:3}
+.c1{left:29%}.c2{left:47%;height:57px;bottom:194px}.c3{left:65%}
+.flame{position:absolute;top:-25px;left:1px;width:12px;height:23px;background:radial-gradient(ellipse at 50% 70%,#fff9b4 0 20%,#ffb52e 42%,#ff5a1f 72%,transparent 74%);border-radius:50% 50% 45% 45%;transform-origin:50% 90%;filter:drop-shadow(0 0 8px #ffb52e);animation:flicker .18s infinite alternate}
+.flame.out{display:none}
+.smoke{display:none;position:absolute;top:-28px;left:2px;width:10px;height:28px;border-radius:50%;border-left:3px solid #eee9f0;opacity:.8;animation:smokeUp 1.2s ease-out forwards}
+.cake.off .flame{display:none}.cake.off .smoke{display:block}.cake.off{animation:none}
+.sprinkle{position:absolute;width:5px;height:12px;border-radius:5px;background:#fff3a6;top:35px}
+.s1{left:17%;transform:rotate(30deg)}.s2{left:31%;background:#8c1b55;transform:rotate(-25deg)}.s3{left:52%;transform:rotate(22deg)}.s4{left:76%;background:#fff;transform:rotate(-35deg)}
+.wish{display:none;font-size:1.3rem;color:#ffe4ef;text-shadow:0 0 14px #ff8ab9;animation:appear .8s ease-out}
+.song-status{color:#ffd6e7;font-size:.9rem}
+.floating-heart{position:fixed;bottom:-40px;z-index:5;pointer-events:none;animation:floatUp linear forwards}
+.confetti{position:fixed;top:-20px;z-index:6;width:9px;height:14px;pointer-events:none;animation:confettiFall linear forwards}
+.footer{opacity:.85;margin-top:32px}
+@keyframes beat{50%{transform:scale(1.14)}}
+@keyframes cakeFloat{0%,100%{transform:rotateY(-5deg) translateY(0)}50%{transform:rotateY(5deg) translateY(-7px)}}
+@keyframes flicker{from{transform:rotate(-4deg) scale(.94)}to{transform:rotate(4deg) scale(1.07)}}
+@keyframes smokeUp{to{transform:translateY(-28px) translateX(7px) scale(1.8);opacity:0}}
+@keyframes floatUp{to{transform:translateY(-115vh) rotate(360deg);opacity:0}}
+@keyframes confettiFall{to{transform:translateY(110vh) rotate(720deg);opacity:.9}}
+@keyframes appear{from{opacity:0;transform:scale(.8)}to{opacity:1;transform:scale(1)}}
+@media(max-width:480px){.card{padding:18px}.cake-stage{min-height:315px}.cake{transform:scale(.92)}}
+</style>
 </head>
-
 <body>
+<div class="container">
+  <div class="heart-logo">❤️</div>
+  <h1>Happy Birthday, My Princess ❤️</h1>
+  <p>Today is all about you, my favourite person. 🌹</p>
 
-  <div class="container">
-
-    <div class="heart">❤️</div>
-
-    <h1>Happy Birthday, My Princess ❤️</h1>
-
-    <p>
-      Today is all about you, my favourite person. 🌹
-    </p>
-
-    <div class="card">
-      <h2>To My Favourite Person 💗</h2>
-
-      <p>
-        You make ordinary moments feel special,
-        and your smile makes everything better.
-        Today, I just want you to know how precious
-        you are to me. 💕
-      </p>
-
-      <p>
-        I hope your birthday is filled with love,
-        happiness, smiles and beautiful memories. 🎂
-      </p>
-
-      <button onclick="showLetter()">
-        Open Your Surprise 💌
-      </button>
+  <section class="card">
+    <h2>🎂 A Cake Made Just for You</h2>
+    <p>Close your eyes, make a wish, and let the magic begin. ✨</p>
+    <div class="cake-stage">
+      <div class="cake" id="cake" aria-label="Animated birthday cake with three candles">
+        <div class="plate"></div>
+        <div class="tier tier-bottom"><div class="icing"></div><i class="drip d1"></i><i class="drip d2"></i><i class="drip d3"></i><i class="drip d4"></i><i class="sprinkle s1"></i><i class="sprinkle s2"></i><i class="sprinkle s3"></i><i class="sprinkle s4"></i></div>
+        <div class="tier tier-top"><div class="icing"></div><i class="berry b1"></i><i class="berry b2"></i><i class="berry b3"></i></div>
+        <div class="candle c1"><i class="flame"></i><i class="smoke"></i></div>
+        <div class="candle c2"><i class="flame"></i><i class="smoke"></i></div>
+        <div class="candle c3"><i class="flame"></i><i class="smoke"></i></div>
+      </div>
     </div>
+    <button id="blowBtn" onclick="blowCandles()">💨 Blow the Candles</button>
+    <button onclick="makeWish()">✨ Make a Wish</button>
+    <button onclick="relightCandles()">🕯️ Light Them Again</button>
+    <button id="micBtn" onclick="startMic()">🎤 Enable Blow-by-Mic</button>
+    <p class="small-note">You can blow gently toward your phone microphone, or simply press the button. 🎤</p>
+    <p id="wish" class="wish">Your wish is on its way to the stars! 💖✨</p>
+    <p id="micStatus" class="small-note" aria-live="polite">Microphone is optional; the button always works.</p>
+  </section>
 
-    <div class="card" id="letter">
-      <h2>A Little Letter For You 💌</h2>
+  <section class="card">
+    <h2>To My Favourite Person 💗</h2>
+    <p>You make ordinary moments feel special, and your smile makes everything better. Today, I just want you to know how precious you are to me. 💕</p>
+    <p>I hope your birthday is filled with love, happiness, smiles and beautiful memories. 🎂</p>
+    <button onclick="showLetter()">Open Your Surprise 💌</button>
+  </section>
 
-      Happy Birthday, my princess! ❤️
+  <section class="card" id="letter">
+    <h2>A Little Letter For You 💌</h2>
+    Happy Birthday, my princess! ❤️
 
-      You are someone who makes my world brighter
-      just by being in it. Your happiness matters
-      to me more than words can explain.
+    You are someone who makes my world brighter just by being in it. Your happiness matters to me more than words can explain.
 
-      I wish I could make every single moment
-      of your life beautiful and fill every day
-      with reasons to smile.
+    I wish I could make every single moment of your life beautiful and fill every day with reasons to smile.
 
-      No matter how many birthdays pass,
-      I hope you always remember how special
-      you are.
+    No matter how many birthdays pass, I hope you always remember how special you are.
 
-      Keep smiling, keep shining, and keep being
-      the wonderful person you are. 🌹
+    Keep smiling, keep shining, and keep being the wonderful person you are. 🌹
 
-      You deserve all the happiness in the world.
+    You deserve all the happiness in the world.
 
-      <br>
-      <strong>Happy Birthday, My Princess! ❤️🎂</strong>
-    </div>
+    <strong>Happy Birthday, My Princess! ❤️🎂</strong>
+  </section>
 
-    <div class="card">
-      <h2>You Are Special 🌷</h2>
+  <section class="card">
+    <h2>You Are Special 🌷</h2>
+    <p>If I could give you one thing in life, I would give you the ability to see yourself through my eyes. Then you would understand just how special you are. ❤️</p>
+    <p>Made with love, just for you. 💖</p>
+    <button onclick="scrollToTop()">Back to Top ❤️</button>
+  </section>
 
-      <p>
-        If I could give you one thing in life,
-        I would give you the ability to see yourself
-        through my eyes. Then you would understand
-        just how special you are. ❤️
-      </p>
+  <section class="card">
+    <h2>Our Love Song 🎶❤️</h2>
+    <p>Apna Bana Le — just for you, my princess. 💗</p>
+    <p class="song-status" id="songStatus">The song will try to start when you open your surprise…</p>
+    <div id="youtubePlayer" style="position:fixed;width:1px;height:1px;left:-100px;top:-100px;overflow:hidden" aria-hidden="true"></div>
+    <p class="small-note">If the browser blocks autoplay, the surprise button will try to start the song. 🎵</p>
+  </section>
+  <div class="footer">Forever sending you love ❤️✨</div>
+</div>
 
-      <p>Made with love, just for you. 💖</p>
+<script>
+const cake = document.getElementById('cake');
+const wish = document.getElementById('wish');
+const micStatus = document.getElementById('micStatus');
+let candlesOut = false;
+let audioContext, analyser, micStream, micActive = false;
+let ytPlayer = null;
+let playerReady = false;
+let surpriseClicked = false;
 
-      <button onclick="scrollToTop()">
-        Back to Top ❤️
-      </button>
-    </div>
+function showerHearts(count=24) {
+  const emojis=['💖','💕','💗','❤️','💘','✨'];
+  for(let i=0;i<count;i++){
+    const el=document.createElement('span');
+    el.className='floating-heart';
+    el.textContent=emojis[Math.floor(Math.random()*emojis.length)];
+    el.style.left=Math.random()*100+'vw';
+    el.style.fontSize=(18+Math.random()*22)+'px';
+    el.style.animationDuration=(3+Math.random()*3)+'s';
+    document.body.appendChild(el);
+    setTimeout(()=>el.remove(),6500);
+  }
+}
+function confettiBurst(count=130) {
+  const colors=['#ff5d9e','#ffd166','#fff0f5','#9bf6ff','#caffbf','#bdb2ff','#ffffff'];
+  for(let i=0;i<count;i++){
+    const el=document.createElement('i');
+    el.className='confetti';
+    el.style.left=Math.random()*100+'vw';
+    el.style.background=colors[Math.floor(Math.random()*colors.length)];
+    el.style.animationDuration=(2.2+Math.random()*3.2)+'s';
+    el.style.animationDelay=(Math.random()*.8)+'s';
+    document.body.appendChild(el);
+    setTimeout(()=>el.remove(),6500);
+  }
+}
+function blowCandles(){
+  if(candlesOut){showerHearts(12);return;}
+  candlesOut=true;
+  cake.classList.add('off');
+  document.getElementById('blowBtn').textContent='💖 Candles Blown!';
+  wish.style.display='block';
+  confettiBurst();
+  showerHearts(34);
+  stopMic();
+}
+function makeWish(){
+  wish.style.display='block';
+  if(!candlesOut) blowCandles();
+  else {confettiBurst(70);showerHearts(18);}
+}
+function relightCandles(){
+  candlesOut=false;
+  cake.classList.remove('off');
+  wish.style.display='none';
+  document.getElementById('blowBtn').textContent='💨 Blow the Candles';
+  micStatus.textContent='Candles are glowing again. Blow them out whenever you wish!';
+}
+function showLetter(){
+  const letter=document.getElementById('letter');
+  letter.style.display='block';
+  letter.scrollIntoView({behavior:'smooth',block:'center'});
+  showerHearts(10);
+  surpriseClicked=true;
+  document.getElementById('songStatus').textContent='🎶 Starting Apna Bana Le for you… ❤️';
+  if(playerReady && ytPlayer){
+    try { ytPlayer.unMute(); ytPlayer.setVolume(65); ytPlayer.playVideo(); } catch(e) {}
+  }
+}
+function scrollToTop(){window.scrollTo({top:0,behavior:'smooth'});}
 
-    <div class="song-box">
-      <h2>Our Love Song 🎶❤️</h2>
+async function startMic(){
+  if(micActive||candlesOut)return;
+  if(!navigator.mediaDevices||!navigator.mediaDevices.getUserMedia){
+    micStatus.textContent='Microphone is not supported here. Use the Blow the Candles button.';
+    return;
+  }
+  try{
+    micStream=await navigator.mediaDevices.getUserMedia({audio:true});
+    audioContext=new(window.AudioContext||window.webkitAudioContext)();
+    const source=audioContext.createMediaStreamSource(micStream);
+    analyser=audioContext.createAnalyser(); analyser.fftSize=512; source.connect(analyser);
+    const data=new Uint8Array(analyser.frequencyBinCount);
+    micActive=true; micStatus.textContent='Microphone ready! Blow gently toward your phone microphone. 🎤';
+    let loudSince=0;
+    const check=()=>{
+      if(!micActive||candlesOut)return;
+      analyser.getByteTimeDomainData(data);
+      let sum=0;
+      for(let i=0;i<data.length;i++){const v=(data[i]-128)/128;sum+=v*v;}
+      const volume=Math.sqrt(sum/data.length);
+      if(volume>0.19){
+        if(!loudSince)loudSince=Date.now();
+        if(Date.now()-loudSince>650){micStatus.textContent='Wish granted! 🎉';blowCandles();return;}
+      }else loudSince=0;
+      requestAnimationFrame(check);
+    };
+    check();
+  }catch(e){
+    micStatus.textContent='Microphone access was not granted. No problem—use the Blow the Candles button!';
+  }
+}
+function stopMic(){
+  micActive=false;
+  if(micStream)micStream.getTracks().forEach(track=>track.stop());
+  if(audioContext&&audioContext.state!=='closed')audioContext.close();
+}
 
-      <p>Apna Bana Le — just for you, my princess. 💗</p>
-
-      <iframe
-        src="https://www.youtube.com/embed/UEvOsQBu1jY"
-        title="Apna Bana Le"
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-        allowfullscreen>
-      </iframe>
-
-      <p>Tap play and enjoy our song together. 🫶</p>
-    </div>
-
-    <div class="footer">
-      <p>Forever sending you love ❤️✨</p>
-    </div>
-
-  </div>
-
-  <script>
-    function showLetter() {
-      const letter = document.getElementById("letter");
-
-      letter.style.display = "block";
-
-      letter.scrollIntoView({
-        behavior: "smooth",
-        block: "center"
-      });
+// YouTube background player: autoplay is attempted, then the Surprise button retries with sound.
+window.onYouTubeIframeAPIReady=function(){
+  ytPlayer=new YT.Player('youtubePlayer',{
+    width:'1',height:'1',videoId:'UEvOsQBu1jY',
+    playerVars:{autoplay:1,controls:0,loop:1,playlist:'UEvOsQBu1jY',playsinline:1},
+    events:{
+      onReady:function(event){
+        playerReady=true;
+        event.target.setVolume(65);
+        event.target.playVideo();
+        if(surpriseClicked){event.target.unMute();event.target.playVideo();}
+      },
+      onStateChange:function(event){
+        if(event.data===YT.PlayerState.PLAYING){
+          document.getElementById('songStatus').textContent='♪ Apna Bana Le is playing in the background ❤️';
+        }
+        if(event.data===YT.PlayerState.ENDED)event.target.playVideo();
+      },
+      onError:function(){
+        document.getElementById('songStatus').textContent='YouTube could not play the song here. Browser or video settings may block playback.';
+      }
     }
-
-    function scrollToTop() {
-      window.scrollTo({
-        top: 0,
-        behavior: "smooth"
-      });
-    }
-  </script>
-
+  });
+};
+const ytScript=document.createElement('script');
+ytScript.src='https://www.youtube.com/iframe_api';
+document.head.appendChild(ytScript);
+</script>
 </body>
 </html>
