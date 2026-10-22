@@ -728,5 +728,61 @@ function finalSurprise(){
 }
 
 </script>
+<!-- MY PRINCESS PHOTO GALLERY --><section id="memories" style="padding:25px 12px;text-align:center;color:white;">
+  <h2>💗 Our Little World of Memories 💗</h2>
+  <p>Every picture holds a little piece of my heart. ❤️</p>  <div id="photoGallery" style="display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:15px;max-width:700px;margin:25px auto;"></div>
+</section><style>
+#photoGallery .memory-card {
+  background:#fff5fa;
+  color:#8b2855;
+  padding:8px 8px 15px;
+  border-radius:5px;
+  box-shadow:0 5px 15px #0004;
+  transform:rotate(-2deg);
+}
+#photoGallery .memory-card:nth-child(even) {
+  transform:rotate(2deg);
+}
+#photoGallery img {
+  width:100%;
+  height:180px;
+  object-fit:cover;
+  display:block;
+}
+#photoGallery p {
+  font-size:13px;
+  margin:10px 2px 0;
+}
+@media(max-width:480px) {
+  #photoGallery img {height:130px;}
+}
+</style><script>
+const princessPhotos = [
+  "IMG_20261022_223400_628_1.jpg"
+];
+
+const gallery = document.getElementById("photoGallery");
+
+princessPhotos.forEach((filename, index) => {
+  const card = document.createElement("div");
+  card.className = "memory-card";
+
+  const photo = document.createElement("img");
+  photo.src = filename;
+  photo.alt = "Our special memory " + (index + 1);
+  photo.loading = "lazy";
+
+  const caption = document.createElement("p");
+  caption.textContent = [
+    "💗 A little piece of happiness",
+    "🌷 My favourite memory",
+    "✨ Forever in my heart"
+  ][index % 3];
+
+  card.appendChild(photo);
+  card.appendChild(caption);
+  gallery.appendChild(card);
+});
+</script>
 </body>
 </html>
