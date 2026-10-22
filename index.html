@@ -1,4 +1,928 @@
-ng you the biggest virtual hug! 🫂
+<!DOCTYPE html>  <html lang="en">  
+<head>  
+<meta charset="UTF-8">  
+<meta name="viewport" content="width=device-width, initial-scale=1.0">  
+<title>For My Princess ❤️</title>  <style>  
+* {  
+  box-sizing: border-box;  
+  margin: 0;  
+  padding: 0;  
+}  
+  
+:root {  
+  --gold: #f6d58a;  
+  --pink: #ff9fc8;  
+  --cream: #fff0df;  
+  --wine: #3b071c;  
+}  
+  
+body {  
+  min-height: 100vh;  
+  color: var(--cream);  
+  font-family: Georgia, "Times New Roman", serif;  
+  background:  
+    radial-gradient(ellipse at top, #6b1838 0%, transparent 60%),  
+    linear-gradient(145deg, #17020c, #39081f 55%, #16020b);  
+  overflow-x: hidden;  
+}  
+  
+button {  
+  font-family: inherit;  
+  cursor: pointer;  
+  -webkit-tap-highlight-color: transparent;  
+}  
+  
+button:active {  
+  transform: scale(.97);  
+}  
+  
+#stars {  
+  position: fixed;  
+  inset: 0;  
+  pointer-events: none;  
+  overflow: hidden;  
+  z-index: 0;  
+}  
+  
+.star {  
+  position: absolute;  
+  color: #ffe7a6;  
+  opacity: .65;  
+  animation: twinkle 2s infinite alternate;  
+}  
+  
+@keyframes twinkle {  
+  from { opacity: .15; transform: scale(.7); }  
+  to { opacity: .9; transform: scale(1.2); }  
+}  
+  
+#hearts {  
+  position: fixed;  
+  inset: 0;  
+  pointer-events: none;  
+  overflow: hidden;  
+  z-index: 5;  
+}  
+  
+.floating-heart {  
+  position: absolute;  
+  bottom: -40px;  
+  animation: floatUp 6s linear forwards;  
+  opacity: .8;  
+}  
+  
+@keyframes floatUp {  
+  to {  
+    transform: translateY(-110vh) rotate(35deg);  
+    opacity: 0;  
+  }  
+}  
+  
+/* WELCOME SCREEN */  
+#welcome {  
+  position: relative;  
+  z-index: 10;  
+  min-height: 100svh;  
+  display: flex;  
+  flex-direction: column;  
+  justify-content: center;  
+  align-items: center;  
+  text-align: center;  
+  padding: 28px 20px;  
+}  
+  
+.welcome-heart {  
+  font-size: 76px;  
+  animation: heartbeat 1.3s infinite;  
+  filter: drop-shadow(0 0 20px #ff5d9d);  
+}  
+  
+@keyframes heartbeat {  
+  0%, 100% { transform: scale(1); }  
+  15% { transform: scale(1.15); }  
+  30% { transform: scale(1); }  
+  45% { transform: scale(1.1); }  
+}  
+  
+#welcome h1 {  
+  font-size: clamp(2.3rem, 9vw, 4.5rem);  
+  color: var(--gold);  
+  margin: 20px 0 12px;  
+  text-shadow: 0 0 25px #e58ca9;  
+}  
+  
+#welcome p {  
+  font-size: 1.1rem;  
+  line-height: 1.8;  
+  max-width: 500px;  
+  color: #ffe0e8;  
+  margin-bottom: 28px;  
+}  
+  
+.gold-button {  
+  background: linear-gradient(135deg, #fff0b8, #d7a34e);  
+  color: #3b071c;  
+  border: 1px solid #fff0b8;  
+  padding: 15px 30px;  
+  border-radius: 40px;  
+  font-weight: bold;  
+  font-size: 1.05rem;  
+  box-shadow: 0 0 25px #e7b65c55;  
+  transition: .25s;  
+}  
+  
+.gold-button:hover {  
+  box-shadow: 0 0 35px #ffd87899;  
+  transform: translateY(-2px);  
+}  
+  
+/* MAIN WEBSITE */  
+#main {  
+  display: none;  
+  position: relative;  
+  z-index: 1;  
+  padding-bottom: 50px;  
+}  
+  
+.hero {  
+  text-align: center;  
+  padding: 65px 20px 30px;  
+}  
+  
+.eyebrow {  
+  color: var(--pink);  
+  letter-spacing: 4px;  
+  text-transform: uppercase;  
+  font-size: .8rem;  
+}  
+  
+.hero h1 {  
+  color: var(--gold);  
+  font-size: clamp(2.4rem, 8vw, 4.8rem);  
+  margin: 16px 0;  
+  text-shadow: 0 0 25px #d96a9a66;  
+}  
+  
+.hero p {  
+  line-height: 1.8;  
+  color: #f9dce7;  
+}  
+  
+nav {  
+  position: sticky;  
+  top: 0;  
+  z-index: 20;  
+  display: flex;  
+  gap: 8px;  
+  justify-content: center;  
+  flex-wrap: wrap;  
+  padding: 12px;  
+  background: #21030fdf;  
+  backdrop-filter: blur(10px);  
+  border-top: 1px solid #ffffff12;  
+  border-bottom: 1px solid #ffffff12;  
+}  
+  
+nav a {  
+  color: var(--gold);  
+  text-decoration: none;  
+  font-size: .83rem;  
+  padding: 8px 11px;  
+  border: 1px solid #f6d58a35;  
+  border-radius: 20px;  
+}  
+  
+nav a:hover {  
+  background: #f6d58a18;  
+}  
+  
+section {  
+  scroll-margin-top: 85px;  
+  width: min(900px, 92%);  
+  margin: 0 auto;  
+  padding: 45px 0;  
+}  
+  
+.section-title {  
+  text-align: center;  
+  color: var(--gold);  
+  font-size: clamp(1.8rem, 6vw, 2.7rem);  
+  margin-bottom: 14px;  
+}  
+  
+.section-subtitle {  
+  text-align: center;  
+  color: #eec9d8;  
+  line-height: 1.8;  
+  margin-bottom: 28px;  
+}  
+  
+.card {  
+  background: linear-gradient(145deg, #ffffff0d, #ffffff04);  
+  border: 1px solid #f6d58a36;  
+  border-radius: 22px;  
+  padding: 24px;  
+  box-shadow: 0 10px 35px #00000015;  
+}  
+  
+.center {  
+  text-align: center;  
+}  
+  
+/* CAKE */  
+.cake-area {  
+  text-align: center;  
+  padding: 25px 10px 10px;  
+}  
+  
+.cake {  
+  position: relative;  
+  width: 210px;  
+  height: 155px;  
+  margin: 45px auto 20px;  
+}  
+  
+.cake-top {  
+  position: absolute;  
+  width: 190px;  
+  height: 40px;  
+  left: 10px;  
+  top: 25px;  
+  border-radius: 50%;  
+  background: #ffb4d2;  
+  border: 3px solid #ffe2eb;  
+  z-index: 3;  
+}  
+  
+.cake-top::after {  
+  content: "";  
+  position: absolute;  
+  left: 0;  
+  right: 0;  
+  bottom: -15px;  
+  height: 27px;  
+  background: #ffb4d2;  
+  border-radius: 0 0 45% 45%;  
+}  
+  
+.cake-body {  
+  position: absolute;  
+  width: 190px;  
+  height: 90px;  
+  left: 10px;  
+  top: 45px;  
+  border-radius: 10px 10px 20px 20px;  
+  background: linear-gradient(90deg, #d98ba7, #ffcede, #e9a0bb);  
+  box-shadow: inset 0 -12px #b96686;  
+}  
+  
+.cake-base {  
+  position: absolute;  
+  width: 210px;  
+  height: 32px;  
+  bottom: 0;  
+  background: linear-gradient(#fff0df, #d9a8b7);  
+  border-radius: 50%;  
+}  
+  
+.candle {  
+  position: absolute;  
+  bottom: 110px;  
+  width: 10px;  
+  height: 42px;  
+  background: repeating-linear-gradient(  
+    45deg, #fff 0 6px, #d84d78 6px 12px  
+  );  
+  border-radius: 4px;  
+  z-index: 5;  
+}  
+  
+.candle:nth-child(1) { left: 57px; }  
+.candle:nth-child(2) { left: 100px; }  
+.candle:nth-child(3) { left: 143px; }  
+  
+.flame {  
+  position: absolute;  
+  width: 14px;  
+  height: 20px;  
+  left: -2px;  
+  top: -22px;  
+  border-radius: 50% 50% 50% 0;  
+  background: radial-gradient(circle at 40% 65%, #fff7a6, #ffae38 55%, #ff5c22);  
+  transform: rotate(-45deg);  
+  filter: drop-shadow(0 0 8px #ffb32f);  
+  animation: flicker .45s infinite alternate;  
+}  
+  
+.flame.off {  
+  display: none;  
+}  
+  
+@keyframes flicker {  
+  from { transform: rotate(-45deg) scale(1); }  
+  to { transform: rotate(-40deg) scale(1.12); }  
+}  
+  
+.button-row {  
+  display: flex;  
+  justify-content: center;  
+  flex-wrap: wrap;  
+  gap: 10px;  
+  margin-top: 18px;  
+}  
+  
+.pink-button {  
+  color: white;  
+  background: linear-gradient(135deg, #d84780, #9c2257);  
+  border: 1px solid #ffb5d0;  
+  padding: 12px 20px;  
+  border-radius: 30px;  
+  font-size: .95rem;  
+}  
+  
+.soft-button {  
+  color: var(--gold);  
+  background: #ffffff0a;  
+  border: 1px solid #f6d58a55;  
+  padding: 12px 20px;  
+  border-radius: 30px;  
+  font-size: .95rem;  
+}  
+  
+#wishMessage {  
+  color: var(--gold);  
+  line-height: 1.8;  
+  margin-top: 20px;  
+  min-height: 28px;  
+}  
+  
+/* LOVE LETTER */  
+.letter {  
+  color: #5b1831;  
+  background: linear-gradient(140deg, #fff0df, #f4d5dd);  
+  border-radius: 5px;  
+  padding: clamp(22px, 5vw, 42px);  
+  box-shadow: 0 12px 35px #00000028;  
+  line-height: 2;  
+  font-size: 1.05rem;  
+}  
+  
+.letter h3 {  
+  text-align: center;  
+  color: #9b2854;  
+  margin-bottom: 20px;  
+  font-size: 1.7rem;  
+}  
+  
+.letter p {  
+  margin-bottom: 15px;  
+}  
+  
+.signature {  
+  text-align: right;  
+  font-style: italic;  
+  color: #9b2854;  
+  margin-top: 20px;  
+}  
+  
+/* MUSIC */  
+.music-box {  
+  text-align: center;  
+}  
+  
+.music-box p {  
+  line-height: 1.8;  
+  color: #f8d9e5;  
+  margin: 12px 0 20px;  
+}  
+  
+.video-frame {  
+  width: 100%;  
+  max-width: 560px;  
+  aspect-ratio: 16 / 9;  
+  border: 1px solid #f6d58a66;  
+  border-radius: 16px;  
+  overflow: hidden;  
+  margin: 20px auto 0;  
+  background: #13020a;  
+}  
+  
+.video-frame iframe {  
+  width: 100%;  
+  height: 100%;  
+  border: 0;  
+}  
+  
+/* GALLERY */  
+.gallery {  
+  display: grid;  
+  grid-template-columns: repeat(3, minmax(0, 1fr));  
+  gap: 12px;  
+}  
+  
+.photo-card {  
+  background: #ffffff0b;  
+  border: 1px solid #f6d58a45;  
+  border-radius: 14px;  
+  overflow: hidden;  
+  min-width: 0;  
+}  
+  
+.photo-card img {  
+  width: 100%;  
+  height: 180px;  
+  object-fit: cover;  
+  display: block;  
+  cursor: pointer;  
+  transition: transform .3s;  
+}  
+  
+.photo-card img:hover {  
+  transform: scale(1.04);  
+}  
+  
+.photo-caption {  
+  padding: 10px 5px;  
+  text-align: center;  
+  color: #ffe3ee;  
+  font-size: .85rem;  
+}  
+  
+#photoViewer {  
+  display: none;  
+  position: fixed;  
+  z-index: 100;  
+  inset: 0;  
+  background: #100109ee;  
+  align-items: center;  
+  justify-content: center;  
+  padding: 20px;  
+}  
+  
+#photoViewer img {  
+  max-width: 95%;  
+  max-height: 85vh;  
+  border: 2px solid var(--gold);  
+  border-radius: 12px;  
+}  
+  
+#photoViewer button {  
+  position: absolute;  
+  top: 20px;  
+  right: 22px;  
+  background: #4c1029;  
+  color: white;  
+  border: 1px solid var(--gold);  
+  border-radius: 50%;  
+  width: 42px;  
+  height: 42px;  
+  font-size: 24px;  
+}  
+  
+/* REASONS */  
+.reason-grid {  
+  display: grid;  
+  grid-template-columns: repeat(2, minmax(0, 1fr));  
+  gap: 14px;  
+}  
+  
+.reason {  
+  text-align: center;  
+  padding: 23px 15px;  
+  border: 1px solid #f6d58a35;  
+  border-radius: 18px;  
+  background: #ffffff08;  
+}  
+  
+.reason .emoji {  
+  font-size: 2rem;  
+  margin-bottom: 10px;  
+}  
+  
+.reason h3 {  
+  color: var(--gold);  
+  margin-bottom: 8px;  
+}  
+  
+.reason p {  
+  color: #f4d9e4;  
+  line-height: 1.7;  
+  font-size: .94rem;  
+}  
+  
+/* GIFTS */  
+.gift-grid {  
+  display: grid;  
+  grid-template-columns: repeat(2, minmax(0, 1fr));  
+  gap: 14px;  
+}  
+  
+.gift {  
+  border: 1px solid #f6d58a44;  
+  background: #ffffff08;  
+  padding: 20px 14px;  
+  border-radius: 18px;  
+  text-align: center;  
+}  
+  
+.gift .gift-icon {  
+  font-size: 2.5rem;  
+}  
+  
+.gift h3 {  
+  color: var(--gold);  
+  margin: 10px 0;  
+}  
+  
+.gift p {  
+  color: #f4d9e4;  
+  line-height: 1.7;  
+}  
+  
+.gift button {  
+  margin-top: 14px;  
+}  
+  
+.gift-message {  
+  display: none;  
+  margin-top: 14px;  
+  color: #ffc5dd;  
+  line-height: 1.8;  
+}  
+  
+/* PROMISES */  
+.promise-list {  
+  display: grid;  
+  gap: 12px;  
+}  
+  
+.promise {  
+  border-left: 3px solid var(--gold);  
+  background: #ffffff08;  
+  padding: 16px 18px;  
+  border-radius: 0 12px 12px 0;  
+  color: #ffe4ed;  
+  line-height: 1.7;  
+}  
+  
+.promise span {  
+  color: var(--gold);  
+  margin-right: 8px;  
+}  
+  
+/* LOVE METER */  
+.meter-track {  
+  width: 100%;  
+  height: 20px;  
+  border-radius: 30px;  
+  background: #ffffff15;  
+  border: 1px solid #f6d58a55;  
+  overflow: hidden;  
+  margin: 22px 0;  
+}  
+  
+#meterFill {  
+  width: 0%;  
+  height: 100%;  
+  border-radius: 30px;  
+  background: linear-gradient(90deg, #d63375, #ffabc9, #ffe6a0);  
+  transition: width .2s;  
+}  
+  
+#meterText {  
+  color: var(--gold);  
+  text-align: center;  
+  font-size: 1.1rem;  
+  min-height: 30px;  
+  line-height: 1.7;  
+}  
+  
+/* GAME */  
+#gameArea {  
+  position: relative;  
+  height: 300px;  
+  margin-top: 20px;  
+  background: #17020c99;  
+  border: 1px solid #f6d58a44;  
+  border-radius: 16px;  
+  overflow: hidden;  
+  touch-action: manipulation;  
+}  
+  
+#gameHeart {  
+  display: none;  
+  position: absolute;  
+  font-size: 36px;  
+  background: transparent;  
+  border: 0;  
+  padding: 5px;  
+}  
+  
+.game-stats {  
+  display: flex;  
+  justify-content: space-around;  
+  gap: 10px;  
+  flex-wrap: wrap;  
+  color: var(--gold);  
+  margin-top: 15px;  
+  line-height: 1.8;  
+}  
+  
+#gameMessage {  
+  text-align: center;  
+  color: #ffd4e4;  
+  margin-top: 15px;  
+  line-height: 1.8;  
+}  
+  
+/* FINAL */  
+.final-box {  
+  text-align: center;  
+  padding: 35px 20px;  
+  border: 1px solid #f6d58a55;  
+  border-radius: 24px;  
+  background: linear-gradient(145deg, #ffffff0b, #a5205418);  
+}  
+  
+.final-box .big-heart {  
+  font-size: 70px;  
+  animation: heartbeat 1.4s infinite;  
+}  
+  
+#finalMessage {  
+  display: none;  
+  margin-top: 25px;  
+  color: #ffe0eb;  
+  font-size: 1.08rem;  
+  line-height: 2;  
+}  
+  
+footer {  
+  position: relative;  
+  z-index: 1;  
+  text-align: center;  
+  padding: 30px 15px;  
+  color: #d9a8bb;  
+  font-size: .9rem;  
+  line-height: 1.8;  
+}  
+  
+@media (max-width: 600px) {  
+  .gallery {  
+    grid-template-columns: repeat(2, minmax(0, 1fr));  
+    gap: 9px;  
+  }  
+  
+  .photo-card img {  
+    height: 155px;  
+  }  
+  
+  .reason-grid,  
+  .gift-grid {  
+    grid-template-columns: 1fr;  
+  }  
+  
+  nav {  
+    gap: 6px;  
+  }  
+  
+  nav a {  
+    padding: 7px 9px;  
+    font-size: .78rem;  
+  }  
+  
+  .card {  
+    padding: 18px;  
+  }  
+}  
+  
+@media (prefers-reduced-motion: reduce) {  
+  *, *::before, *::after {  
+    animation-duration: .01ms !important;  
+    transition-duration: .01ms !important;  
+  }  
+}  
+</style>  </head>  <body>  <div id="stars" aria-hidden="true"></div>  
+<div id="hearts" aria-hidden="true"></div>  <!-- WELCOME SCREEN -->  <div id="welcome">  
+  <div class="welcome-heart">❤️</div>    <h1>For My Princess</h1>    <p>  
+    A little world made with love,<br>  
+    just for the most special person in my life.  
+  </p>    <!-- Both onclick and JavaScript event listener are supported -->  <button  
+type="button"  
+id="enterButton"  
+class="gold-button"  
+onclick="enterWorld()">
+Enter My Heart ♡
+</button>
+
+  <p style="margin-top:22px;font-size:.85rem;color:#e9b9ca;">  
+    Made with love, only for you ✨  
+  </p>  
+</div>  <!-- MAIN WEBSITE -->  <main id="main">    <header class="hero">  
+    <div class="eyebrow">A little universe made for you</div>  
+    <h1>My Princess ♡</h1>  
+    <p>  
+      Every little thing here is a reminder<br>  
+      of how special you are to me.  
+    </p>  
+  </header>    <nav aria-label="Website sections">  
+    <a href="#birthday">Birthday</a>  
+    <a href="#letter">Love Letter</a>  
+    <a href="#song">Our Song</a>  
+    <a href="#gallery">Memories</a>  
+    <a href="#reasons">Reasons</a>  
+    <a href="#gifts">Gifts</a>  
+    <a href="#promises">Promises</a>  
+    <a href="#game">Love Game</a>  
+    <a href="#surprise">Surprise</a>  
+  </nav>    <!-- BIRTHDAY CAKE -->    <section id="birthday">  
+    <h2 class="section-title">Make a Wish 🎂</h2>  
+    <p class="section-subtitle">  
+      Close your eyes, make a beautiful wish, and blow the candles.  
+    </p>  <div class="card">  
+  <div class="cake-area">  
+    <div class="cake" aria-label="Birthday cake with three candles">  
+      <div class="cake-top"></div>  
+      <div class="cake-body"></div>  
+      <div class="cake-base"></div>  
+
+      <div class="candle">  
+        <div class="flame"></div>  
+      </div>  
+
+      <div class="candle">  
+        <div class="flame"></div>  
+      </div>  
+
+      <div class="candle">  
+        <div class="flame"></div>  
+      </div>  
+    </div>  
+
+    <h3 style="color:var(--gold);margin:18px 0;">  
+      Happy Birthday, My Princess! 💗  
+    </h3>  
+
+    <p style="color:#f6dce6;line-height:1.8;">  
+      You deserve all the happiness in the universe.  
+    </p>  
+
+    <div class="button-row">  
+      <button type="button" class="pink-button" onclick="blowCandles()">  
+        Blow Candles 🌬️  
+      </button>  
+
+      <button type="button" class="soft-button" onclick="relightCandles()">  
+        Relight Candles 🕯️  
+      </button>  
+    </div>  
+
+    <p id="wishMessage" aria-live="polite"></p>  
+  </div>  
+</div>
+
+  </section>    <!-- LOVE LETTER -->    <section id="letter">  
+    <h2 class="section-title">A Letter for You 💌</h2>  
+    <p class="section-subtitle">  
+      Some feelings are too special to keep inside.  
+    </p>  <article class="letter">  
+  <h3>To My Favourite Person ❤️</h3>  
+
+  <p>My Princess,</p>  
+
+  <p>  
+    If I could give you one thing in life, I would give you the ability  
+    to see yourself through my eyes. Then you would understand just how  
+    special you are to me.  
+  </p>  
+
+  <p>  
+    You make ordinary moments feel beautiful. Even the smallest things  
+    can remind me of you, and somehow that makes my day a little brighter.  
+  </p>  
+
+  <p>  
+    I cannot promise that every day will be perfect, but I can promise  
+    that the feelings behind these words are real. You deserve kindness,  
+    respect, happiness, and all the little things that make you smile.  
+  </p>  
+
+  <p>  
+    No website could ever explain everything I feel. This little world  
+    is simply my way of showing you that you matter to me more than  
+    these words can say.  
+  </p>  
+
+  <p>  
+    Whenever you visit this page, I hope it reminds you that someone  
+    took the time to make something special just for you.  
+  </p>  
+
+  <p class="signature">  
+    Forever sending you love,<br>  
+    Your Person ❤️  
+  </p>  
+</article>
+
+  </section>    <!-- SONG -->    <section id="song">  
+    <h2 class="section-title">Our Little Melody 🎶</h2>  
+    <p class="section-subtitle">  
+      Some songs say what the heart cannot.  
+    </p>  <div class="card music-box">  
+  <div style="font-size:48px;">🎵 💗 🎵</div>  
+
+  <h3 style="color:var(--gold);margin-top:12px;">  
+    Apna Bana Le  
+  </h3>  
+
+  <p>  
+    Play our song and enjoy this little moment.  
+  </p>  
+
+  <div class="video-frame">  
+    <iframe  
+      id="songFrame"  
+      src="about:blank"  
+      title="Apna Bana Le song"  
+      allow="autoplay; encrypted-media; picture-in-picture"  
+      allowfullscreen>  
+    </iframe>  
+  </div>  
+
+  <div class="button-row">  
+    <button type="button" class="pink-button" onclick="playSong()">  
+      Play Our Song ♫  
+    </button>  
+
+    <button type="button" class="soft-button" onclick="stopSong()">  
+      Stop Music  
+    </button>  
+  </div>  
+
+  <p style="font-size:.83rem;color:#d9a8bb;">  
+    If the video is unavailable, open YouTube and search  
+    “Apna Bana Le”.  
+  </p>  
+</div>
+
+  </section>    <!-- PHOTO GALLERY -->    <section id="gallery">  
+    <h2 class="section-title">Our Little Memories 📸</h2>  
+    <p class="section-subtitle">  
+      Every picture holds a little piece of a memory.  
+      Tap any picture to see it larger.  
+    </p>  <div class="gallery" id="photoGallery"></div>  
+
+<p style="text-align:center;color:#d9a8bb;font-size:.85rem;margin-top:20px;line-height:1.8;">  
+  If a picture does not appear, check that its filename matches  
+  the image file in your GitHub repository.  
+</p>
+
+  </section>    <!-- PHOTO VIEWER -->    <div id="photoViewer" role="dialog" aria-label="Enlarged photo">  
+    <button type="button" onclick="closePhoto()" aria-label="Close photo">×</button>  
+    <img id="largePhoto" src="" alt="Memory enlarged">  
+  </div>    <!-- REASONS -->    <section id="reasons">  
+    <h2 class="section-title">Reasons You're Special 💖</h2>  
+    <p class="section-subtitle">  
+      There are so many reasons, but here are a few.  
+    </p>  <div class="reason-grid">  
+  <div class="reason">  
+    <div class="emoji">😊</div>  
+    <h3>Your Smile</h3>  
+    <p>It can turn an ordinary moment into something beautiful.</p>  
+  </div>  
+
+  <div class="reason">  
+    <div class="emoji">💗</div>  
+    <h3>Your Heart</h3>  
+    <p>The little things about you make you uniquely you.</p>  
+  </div>  
+
+  <div class="reason">  
+    <div class="emoji">✨</div>  
+    <h3>Your Magic</h3>  
+    <p>You have your own way of making moments memorable.</p>  
+  </div>  
+
+  <div class="reason">  
+    <div class="emoji">🌷</div>  
+    <h3>Simply You</h3>  
+    <p>You do not need to be anyone else to be special.</p>  
+  </div>  
+
+  <div class="reason">  
+    <div class="emoji">🫶</div>  
+    <h3>Your Kindness</h3>  
+    <p>The little ways you care mean more than you know.</p>  
+  </div>  
+
+  <div class="reason">  
+    <div class="emoji">🌙</div>  
+    <h3>Your Presence</h3>  
+    <p>Some people make life feel a little softer and brighter.</p>  
+  </div>  
+</div>
+
+  </sending you the biggest virtual hug! 🫂
         </div>
       </div>
 
